@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // provider = "sqlite"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model BloodPressure {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  systolic  Int
+  diastolic Int
+}
+
+model FatPercentage {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  fatPercentage Float
+}
+
+model HeartRate {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  resting   Int
+}
+
+model HeartRateVariability {
+  id                   Int      @id @default(autoincrement())
+  createdAt            DateTime @default(now())
+  heartRateVariability Int
+  low                  Int
+  high                 Int
+}
+
+model Weight {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  weight    Int
+}
