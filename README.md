@@ -73,3 +73,13 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Local Prisma
+
+Add .env with the following value:
+
+```
+DATABASE_URL=file:./dev.db
+```
+
+
